@@ -9,26 +9,24 @@ use Illuminate\Support\ServiceProvider;
 
 class SnipcartWebhooksServiceProvider extends ServiceProvider
 {
+    public function register()
+    {
+        $this->app->singleton(SignatureValidator::class, function () {
+            return new SignatureValidator($this->apiSecret());
+        });
+    }
+
     public function boot()
     {
         Route::macro('webhooks', function (string $url, string $name = 'default') {
             Route::post($url, '\Aerni\SnipcartWebhooks\SnipcartWebhooksController')->name("snipcart-webhooks-{$name}")->withoutMiddleware([VerifyCsrfToken::class]);
         });
 
-        $this->app->singleton(SignatureValidator::class, function () {
-            return new SignatureValidator($this->apiSecret());
-        });
-
-        if ($this->app->runningInConsole()) {
-            $this->publishes([
-                __DIR__.'/../config/snipcart-webhooks.php' => config_path('snipcart-webhooks.php'),
-            ], 'config');
-        }
-    }
-
-    public function register()
-    {
         $this->mergeConfigFrom(__DIR__.'/../config/snipcart-webhooks.php', 'snipcart-webhooks');
+
+        $this->publishes([
+            __DIR__.'/../config/snipcart-webhooks.php' => config_path('snipcart-webhooks.php'),
+        ], 'config');
     }
 
     /**
