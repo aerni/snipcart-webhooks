@@ -2,8 +2,6 @@
 
 namespace Aerni\SnipcartWebhooks\Events;
 
-use Aerni\SnipcartWebhooks\Events\Event;
-
 class OrderTrackingNumberChanged extends Event
 {
     public $order;

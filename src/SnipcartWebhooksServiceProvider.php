@@ -2,11 +2,10 @@
 
 namespace Aerni\SnipcartWebhooks;
 
-use Aerni\SnipcartWebhooks\SignatureValidator;
 use Aerni\SnipcartWebhooks\Exceptions\ApiSecretNotFoundException;
+use App\Http\Middleware\VerifyCsrfToken;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
-use App\Http\Middleware\VerifyCsrfToken;
 
 class SnipcartWebhooksServiceProvider extends ServiceProvider
 {

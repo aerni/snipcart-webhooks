@@ -2,8 +2,6 @@
 
 namespace Aerni\SnipcartWebhooks\Events;
 
-use Aerni\SnipcartWebhooks\Events\Event;
-
 class SubscriptionPaused extends Event
 {
     public $subscription;
