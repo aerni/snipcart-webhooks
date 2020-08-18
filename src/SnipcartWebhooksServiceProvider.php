@@ -20,7 +20,7 @@ class SnipcartWebhooksServiceProvider extends ServiceProvider
 
     public function boot()
     {
-        Route::macro('webhooks', function (string $url, string $name = 'default') {
+        Route::macro('snipcart', function (string $url, string $name = 'default') {
             Route::post($url, '\Aerni\SnipcartWebhooks\SnipcartWebhooksController')->name("snipcart-webhooks-{$name}")->withoutMiddleware([VerifyCsrfToken::class]);
         });
 
