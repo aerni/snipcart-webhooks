@@ -22,30 +22,39 @@ class EventDispatcher
         switch ($event) {
             case 'order.completed':
                 OrderCompleted::dispatch($request->json());
+
                 break;
             case 'order.status.changed':
                 OrderStatusChanged::dispatch($request->json());
+
                 break;
             case 'order.paymentStatus.changed':
                 OrderPaymentStatusChanged::dispatch($request->json());
+
                 break;
             case 'order.trackingNumber.changed':
                 OrderTrackingNumberChanged::dispatch($request->json());
+
                 break;
             case 'subscription.created':
                 SubscriptionCreated::dispatch($request->json());
+
                 break;
             case 'subscription.cancelled':
                 SubscriptionCancelled::dispatch($request->json());
+
                 break;
             case 'subscription.paused':
                 SubscriptionPaused::dispatch($request->json());
+
                 break;
             case 'subscription.resumed':
                 SubscriptionResumed::dispatch($request->json());
+
                 break;
             case 'subscription.invoice.created':
                 SubscriptionInvoiceCreated::dispatch($request->json());
+
                 break;
         }
     }
