@@ -4,7 +4,7 @@ namespace Aerni\SnipcartWebhooks\Events;
 
 use Illuminate\Http\Request;
 
-class InvalidSignatureEvent extends Event
+class InvalidSignature extends Event
 {
     public Request $request;
 

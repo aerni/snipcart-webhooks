@@ -2,7 +2,7 @@
 
 namespace Aerni\SnipcartWebhooks;
 
-use Aerni\SnipcartWebhooks\Events\InvalidSignatureEvent;
+use Aerni\SnipcartWebhooks\Events\InvalidSignature;
 use Aerni\SnipcartWebhooks\Exceptions\WebhookFailedException;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -30,7 +30,7 @@ class SnipcartWebhooksProcessor
         $isValid = resolve(SignatureValidator::class)->isValid($this->request);
 
         if (! $isValid) {
-            InvalidSignatureEvent::dispatch($this->request);
+            InvalidSignature::dispatch($this->request);
 
             throw WebhookFailedException::invalidSignature();
         }
