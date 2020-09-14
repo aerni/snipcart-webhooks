@@ -4,10 +4,10 @@ namespace Aerni\SnipcartWebhooks\Events;
 
 class OrderNotificationCreated extends Event
 {
-    public $notification;
+    public $payload;
 
-    public function __construct($notification)
+    public function __construct($payload)
     {
-        $this->notification = $notification;
+        $this->payload = $payload;
     }
 }

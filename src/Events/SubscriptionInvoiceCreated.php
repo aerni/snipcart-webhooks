@@ -4,10 +4,10 @@ namespace Aerni\SnipcartWebhooks\Events;
 
 class SubscriptionInvoiceCreated extends Event
 {
-    public $subscription;
+    public $payload;
 
-    public function __construct($subscription)
+    public function __construct($payload)
     {
-        $this->subscription = $subscription;
+        $this->payload = $payload;
     }
 }

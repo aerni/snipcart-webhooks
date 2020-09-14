@@ -4,10 +4,10 @@ namespace Aerni\SnipcartWebhooks\Events;
 
 class OrderPaymentStatusChanged extends Event
 {
-    public $order;
+    public $payload;
 
-    public function __construct($order)
+    public function __construct($payload)
     {
-        $this->order = $order;
+        $this->payload = $payload;
     }
 }

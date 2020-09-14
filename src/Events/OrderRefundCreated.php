@@ -4,10 +4,10 @@ namespace Aerni\SnipcartWebhooks\Events;
 
 class OrderRefundCreated extends Event
 {
-    public $refund;
+    public $payload;
 
-    public function __construct($refund)
+    public function __construct($payload)
     {
-        $this->refund = $refund;
+        $this->payload = $payload;
     }
 }
