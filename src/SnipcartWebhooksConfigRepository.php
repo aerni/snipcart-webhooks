@@ -4,7 +4,7 @@ namespace Aerni\SnipcartWebhooks;
 
 use Aerni\SnipcartWebhooks\Exceptions\ApiSecretNotFoundException;
 
-class SnipcartWebhooksConfig
+class SnipcartWebhooksConfigRepository
 {
     /**
      * Get the secret Snipcart API Key by mode.

@@ -2,16 +2,17 @@
 
 namespace Aerni\SnipcartWebhooks;
 
-use App\Http\Middleware\VerifyCsrfToken;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
+use App\Http\Middleware\VerifyCsrfToken;
+use Aerni\SnipcartWebhooks\SnipcartWebhooksConfigRepository as ConfigRepository;
 
 class SnipcartWebhooksServiceProvider extends ServiceProvider
 {
     public function register(): void
     {
         $this->app->singleton(SignatureValidator::class, function () {
-            return new SignatureValidator((new SnipcartWebhooksConfig())->apiSecret());
+            return new SignatureValidator((new ConfigRepository())->apiSecret());
         });
 
         $this->mergeConfigFrom(__DIR__.'/../config/snipcart-webhooks.php', 'snipcart-webhooks');
