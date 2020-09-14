@@ -3,7 +3,6 @@
 namespace Aerni\SnipcartWebhooks\Tests;
 
 use Aerni\SnipcartWebhooks\SnipcartWebhooksConfigRepository as ConfigRepository;
-use Aerni\SnipcartWebhooks\Tests\TestCase;
 
 class SnipcartWebhooksConfigTest extends TestCase
 {

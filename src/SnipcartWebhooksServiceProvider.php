@@ -2,10 +2,10 @@
 
 namespace Aerni\SnipcartWebhooks;
 
+use Aerni\SnipcartWebhooks\SnipcartWebhooksConfigRepository as ConfigRepository;
+use App\Http\Middleware\VerifyCsrfToken;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
-use App\Http\Middleware\VerifyCsrfToken;
-use Aerni\SnipcartWebhooks\SnipcartWebhooksConfigRepository as ConfigRepository;
 
 class SnipcartWebhooksServiceProvider extends ServiceProvider
 {
