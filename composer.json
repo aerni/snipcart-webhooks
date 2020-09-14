@@ -1,6 +1,6 @@
 {
 	"name": "aerni/snipcart-webhooks",
-	"description": "Receive Snipcart Webhooks and dispatch events",
+	"description": "Receive and work with Snipcart webhooks in Laravel",
 	"keywords": [
 		"laravel",
 		"snipcart",
