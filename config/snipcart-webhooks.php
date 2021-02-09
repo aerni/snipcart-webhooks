@@ -19,7 +19,7 @@ return [
     | Test Mode
     |--------------------------------------------------------------------------
     |
-    | Set this to "false" to authenticate using the "live_secret".
+    | Set this to 'false' to authenticate using the 'live_secret'.
     | You probably want to do this in production only.
     |
     */
