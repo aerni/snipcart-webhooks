@@ -70,7 +70,7 @@ This will register a `POST` route to a controller provided by this package. The 
 Each incoming Snipcart webhook request will trigger its corresponding Laravel Event. [Create and register](https://laravel.com/docs/7.x/events) one or more Event Listeners or Subscribers and do your magic.
 
 ### Overview
-| Snipcart Events | Laravel Events |
+| Laravel Events | Snipcart Events |
 |-----------------|----------------|
 | [OrderCompleted](#ordercompleted) | [order.completed](https://docs.snipcart.com/v3/webhooks/order-events#order-completed)
 | [OrderStatusChanged](#orderstatuschanged) | [order.status.changed](https://docs.snipcart.com/v3/webhooks/order-events#order-status-changed)
